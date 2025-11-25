@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Video to Slideshow</title>
+  <style>
+    body { font-family: Arial; text-align: center; margin-top: 50px; }
+    input, select, button { margin: 10px; }
+  </style>
+</head>
+<body>
+  <h1>Video to Slideshow</h1>
+  <input type="file" id="videoFile" accept="video/*" />
+  <select id="interval">
+    <!-- Options 1s to 10s every 0.5s -->
+    <script>
+      for(let i=1; i<=10; i+=0.5){
+        document.write(`<option value="${i}" ${i===1.5?'selected':''}>${i} sec</option>`);
+      }
+    </script>
+  </select>
+  <br>
+  <button id="submitBtn">Create Slideshow</button>
+  <p id="status"></p>
+  <a id="downloadLink" style="display:none" download="slideshow.mp4">Download Slideshow</a>
+
+  <script src="script.js"></script>
+</body>
+</html>
